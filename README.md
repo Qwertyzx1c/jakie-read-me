@@ -37,4 +37,5 @@ Sqlinterface ma implementować metody takie jak:
 
 
 Wszystkie metody obiektu z klasy 'mysqldb' mają być sprawdzone i wywołane w kodzie.
-!!!!!!!!!!!!!!!!!!! DODATKOWE PUNKTY BĘDĄ UWZGLĘDNIONE ZA IMPLEMENTACJE WŁASNEJ METODY LUB KLASY TESTUJĄCEJ POPRAWNOŚĆ DZIAŁANIA METOD NASZEGO OBIEKTU.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DODATKOWE PUNKTY BĘDĄ UWZGLĘDNIONE ZA IMPLEMENTACJE WŁASNEJ METODY LUB KLASY TESTUJĄCEJ POPRAWNOŚĆ DZIAŁANIA METOD NASZEGO OBIEKTU.
+PUNKTY DODATKOWE ZA PREPAROWANE ZAPYTANIA
