@@ -5,7 +5,7 @@
 - Utwórz klase 'mysqldb' która dziedziczy po klasie abstrakcyjnej 'database' właściwości, metody oraz metody abstrakcyjne.
 - Dołącz do klasy 'mysqldb' interfaceDołącz interface 'sqlinterface' do msqldb.
 - Abstrakcyjna klasa powinna zawierać odpowiednie właściwości do połączenia się z bazą danych za pomocą funkcji 'mysqliconnect'.
-- Abstrakcyjna klasa 'database' ma zawierać odpowiednie metody do operowania na 'CRUT'.
+- Abstrakcyjna klasa 'database' ma zawierać odpowiednie metody do operowania na 'CRUD'.
 
 1. Tworzenie bazy danych
 2. Tworzenie tabeli
