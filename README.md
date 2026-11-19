@@ -15,6 +15,10 @@
 
 
 
+
+
+
+
 Sqlinterface ma implementować metody takie jak: 
 - Find All()
 - Find()
@@ -23,5 +27,14 @@ Sqlinterface ma implementować metody takie jak:
 
 
 
- - Wszystkie metody obiektu z klasy 'mysqldb' mają być sprawdzone i wywołane w kodzie.
- - !!!!!!!!!!!!!!!!!!! DODATKOWE PUNKTY BĘDĄ UWZGLĘDNIONE ZA IMPLEMENTACJE WŁASNEJ METODY LUB KLASY TESTUJĄCEJ POPRAWNOŚĆ DZIAŁANIA METOD NASZEGO OBIEKTU.
+
+
+
+
+
+
+
+
+
+Wszystkie metody obiektu z klasy 'mysqldb' mają być sprawdzone i wywołane w kodzie.
+!!!!!!!!!!!!!!!!!!! DODATKOWE PUNKTY BĘDĄ UWZGLĘDNIONE ZA IMPLEMENTACJE WŁASNEJ METODY LUB KLASY TESTUJĄCEJ POPRAWNOŚĆ DZIAŁANIA METOD NASZEGO OBIEKTU.
