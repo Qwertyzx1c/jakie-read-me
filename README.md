@@ -20,10 +20,10 @@
 
 
 Sqlinterface ma implementować metody takie jak: 
-- Find All()
+- FindAll()
 - Find()
-- Read One
-- Read First Ten()
+- ReadOne
+- ReadFirstTen()
 
 
 
