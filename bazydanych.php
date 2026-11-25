@@ -19,7 +19,7 @@ abstract class Database {
     abstract public function createTable($sql);
     abstract public function readTable($table);
     abstract public function updateTable($sql, $params);
-    abstract public function deleteTable($table);
+    // abstract public function deleteTable($table);
 }
 
 class Mysqldb extends Database implements Sqlinterface {
@@ -38,13 +38,17 @@ class Mysqldb extends Database implements Sqlinterface {
 
     public function updateTable($sql, $params) {
         $stmt = mysqli_prepare($this->connection, $sql);
-        mysqli_stmt_bind_param($stmt, str_repeat("s", count($params)), ...$params);
+        $types = "";
+        foreach ($params as $param) {
+            $types .= is_int($param) ? "i" : "s";
+        }
+        mysqli_stmt_bind_param($stmt, $types, ...$params);
         return mysqli_stmt_execute($stmt);
     }
 
-    public function deleteTable($table) {
-        return mysqli_query($this->connection, "DROP TABLE $table");
-    }
+    // public function deleteTable($table) {
+    //     return mysqli_query($this->connection, "DROP TABLE $table");
+    // }
 
     public function FindAll($table) {
         return $this->readTable($table);
@@ -67,7 +71,7 @@ class Mysqldb extends Database implements Sqlinterface {
 }
 
 class TestDatabase {
-    public function test($result, $name) {
+    public function mikudayo($result, $name) {
         echo $result ? "[OK] $name<br>" : "[BLAD] $name<br>";
     }
 }
@@ -76,11 +80,11 @@ $db = new Mysqldb();
 $test = new TestDatabase();
 
 $db->connect();
-$test->test($db->connect(), "Polaczenie");
+$test->mikudayo($db->connect(), "Polaczenie");
 
-$db->createDatabase("test");
+$db->createDatabase("mikudayo");
 
-mysqli_select_db($db->connect(), "test");
+mysqli_select_db($db->connect(), "mikudayo");
 
 $db->createTable("CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -88,20 +92,20 @@ $db->createTable("CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(100)
 )");
 
-$test->test($db->updateTable(
+$test->mikudayo($db->updateTable(
     "INSERT INTO users (name, email) VALUES (?, ?)",
-    ["Jan", "jan@test.pl"]
+    ["Skibidi Toaleta", "jan@test.pl"]
 ), "Dodawanie");
 
-$test->test($db->FindAll("users"), "FindAll");
-$test->test($db->Find("users", 1), "Find");
-$test->test($db->ReadOne("users", 1), "ReadOne");
-$test->test($db->ReadFirstTen("users"), "ReadFirstTen");
+$test->mikudayo($db->FindAll("users"), "FindAll");
+$test->mikudayo($db->Find("users", 1), "Find");
+$test->mikudayo($db->ReadOne("users", 1), "ReadOne");
+$test->mikudayo($db->ReadFirstTen("users"), "ReadFirstTen");
 
-$test->test($db->updateTable(
+$test->mikudayo($db->updateTable(
     "UPDATE users SET name = ? WHERE id = ?",
-    ["Adam", 1]
+    ["Jan", 1]
 ), "Aktualizacja");
 
-$test->test($db->readTable("users"), "Odczyt");
-$test->test($db->deleteTable("users"), "Usuwanie");
+$test->mikudayo($db->readTable("users"), "Odczyt");
+// $test->mikudayo($db->deleteTable("users"), "Usuwanie");
