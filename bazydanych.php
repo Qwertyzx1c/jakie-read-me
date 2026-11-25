@@ -1,13 +1,13 @@
 <?php
 
-interface sqlinterface {
+interface Sqlinterface {
     public function FindAll($table);
     public function Find($table, $id);
     public function ReadOne($table, $id);
     public function ReadFirstTen($table);
 }
 
-abstract class database {
+abstract class Database {
     protected $connection;
 
     public function connect() {
@@ -22,7 +22,7 @@ abstract class database {
     abstract public function deleteTable($table);
 }
 
-class mysqldb extends database implements sqlinterface {
+class Mysqldb extends Database implements Sqlinterface {
 
     public function createDatabase($name) {
         return mysqli_query($this->connection, "CREATE DATABASE IF NOT EXISTS $name");
@@ -72,7 +72,7 @@ class TestDatabase {
     }
 }
 
-$db = new mysqldb();
+$db = new Mysqldb();
 $test = new TestDatabase();
 
 $db->connect();
